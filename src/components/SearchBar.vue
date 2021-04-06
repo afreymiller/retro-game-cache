@@ -1,6 +1,8 @@
 <template>
   <div>
-    <input type="text" placeholder="Search over 80 video games..."/>
+    <input type="text" v-model="search"
+    placeholder="Search over 80 video games..."/>
+    <div v-for="post in filteredList" v-bind:key="post.title">{{post.title}}</div>
   </div>
 </template>
 
@@ -9,6 +11,19 @@ export default {
   name: 'SearchBar',
   props: {
     msg: String
+  }, 
+  data () {
+    return {
+      search: '',
+      postList: [{title: 'Uncharted'}, {title: 'Drake'}]
+    }
+  },
+  computed: {
+    filteredList() {
+      return this.postList.filter(post => {
+        return post.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
   }
 }
 </script>
