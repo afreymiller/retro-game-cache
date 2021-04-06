@@ -2,17 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <search-bar/>
+    <search-results/>
   </div>
 </template>
 
 <script>
 import SearchBar from './components/SearchBar.vue'
-
+import SearchResults from './components/SearchResults.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchBar
+    SearchBar,
+    SearchResults
   }
 }
 </script>
