@@ -1,10 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <search-bar/>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <search-bar/>
+  </div>
 </template>
 
 <script>
 import SearchBar from './components/SearchBar.vue'
+
 
 export default {
   name: 'App',
