@@ -9,15 +9,10 @@ Vue.config.productionTip = false
 const store = new Vuex.Store({
   state: {
     query: '',
-    todos: [
-      { id: 1, text: 'abc', done: true },
-      { id: 2, text: '...', done: false }
+    games: [
+      { id: 1, title: 'Uncharted' },
+      { id: 2, title: 'Halo 3' }
     ]
-  },
-  getters: {
-    doneTodos: state => {
-      return state.todos.filter(todo => todo.done)
-    }
   },
   mutations: {
     mutateQuery: function (state, payload) {
