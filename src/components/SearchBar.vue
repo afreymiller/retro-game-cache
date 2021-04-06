@@ -2,11 +2,13 @@
   <div>
     <input type="text" v-model="search"
     placeholder="Search over 80 video games..."/>
-    <div v-for="post in filteredList" v-bind:key="post.title">{{post.title}}</div>
+    <div v-for="post in todos" v-bind:key="post.text">{{post.id}}</div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'SearchBar',
   props: {
@@ -19,6 +21,9 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      todos: state => state.todos
+    }),
     filteredList() {
       return this.postList.filter(post => {
         return post.title.toLowerCase().includes(this.search.toLowerCase())
