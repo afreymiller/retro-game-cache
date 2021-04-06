@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div v-for="post in todos" v-bind:key="post.text">{{post.id}}</div>
-    <p>{{query}}</p>
+    <div v-for="post in filteredList" v-bind:key="post.title">{{post.title}}</div>
   </div>
 </template>
 
@@ -15,14 +14,14 @@ export default {
   }, 
   computed: {
     ...mapState({
-      todos: state => state.todos,
+      games: state => state.games,
       query: state => state.query
-    })
-    // filteredList() {
-    //   return this.postList.filter(post => {
-    //     return post.title.toLowerCase().includes(this.search.toLowerCase())
-    //   })
-    // }
+    }),
+    filteredList() {
+       return this.games.filter(post => {
+         return post.title.toLowerCase().includes(this.query.toLowerCase())
+       })
+    }
   }
 }
 </script>
