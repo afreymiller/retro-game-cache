@@ -1,13 +1,13 @@
 <template>
   <div>
-    <input type="text" v-model="search"
+    <input type="text" v-model="search" @change="filterBySearch()"
     placeholder="Search over 80 video games..."/>
-    <div v-for="post in todos" v-bind:key="post.text">{{post.id}}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions } from 'vuex'
+
 
 export default {
   name: 'SearchBar',
@@ -16,18 +16,20 @@ export default {
   }, 
   data () {
     return {
-      search: '',
-      postList: [{title: 'Uncharted'}, {title: 'Drake'}]
+      search: ''
     }
   },
-  computed: {
-    ...mapState({
-      todos: state => state.todos
-    }),
-    filteredList() {
-      return this.postList.filter(post => {
-        return post.title.toLowerCase().includes(this.search.toLowerCase())
-      })
+  watch: {
+    search: function() {
+      this.filterBySearch();
+    }
+  },
+  methods: {
+    ...mapActions([ // spread operator so that other methods can still be added.
+      'updateQuery'
+    ]),
+    filterBySearch: function() {
+      this.updateQuery(this.search)
     }
   }
 }
