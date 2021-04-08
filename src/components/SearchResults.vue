@@ -1,13 +1,16 @@
 <template>
   <div>
-    <div v-for="post in filteredList" v-bind:key="post.title">{{post.title}}</div>
+    <game-review-container v-for="game in filteredList" v-bind:key="game.title" :game="game"/>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import GameReviewContainer from './GameReviewContainer.vue'
+
 
 export default {
+  components: { GameReviewContainer },
   name: 'SearchResults',
   props: {
     msg: String
@@ -18,28 +21,12 @@ export default {
       query: state => state.query
     }),
     filteredList() {
-       return this.games.filter(post => {
-         return post.title.toLowerCase().includes(this.query.toLowerCase())
+       return this.games.filter(game => {
+         return game.title.toLowerCase().includes(this.query.toLowerCase())
        })
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+
