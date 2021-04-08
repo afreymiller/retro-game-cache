@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container game-review-container">
       <p>{{game.title}}</p>
       <p>{{game.id}}</p>
   </div>
@@ -15,3 +15,9 @@ export default {
   computed: {}
 }
 </script>
+
+<style scoped>
+.game-review-container {
+    border-style: solid;
+}
+</style>
