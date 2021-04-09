@@ -1,13 +1,18 @@
 <template>
-  <div class="container game-review-container">
-      <p>{{game.title}}</p>
-      <p>{{game.id}}</p>
-  </div>
+      <div class="col-md-2 game-review-container">
+        <img alt="Vue logo" height="100px" src="../assets/halo_3.png">
+                        <div>{{game.title}}</div>
+
+        <rating-bar/>
+      </div>
 </template>
 
 <script>
+import RatingBar from "./RatingBar.vue"
+
 
 export default {
+  components: { RatingBar }, 
   name: 'GameReviewContainer',
   props: {
     game: Object
