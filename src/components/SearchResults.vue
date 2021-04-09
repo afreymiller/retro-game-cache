@@ -1,6 +1,10 @@
 <template>
   <div>
-    <game-review-container v-for="game in filteredList" v-bind:key="game.title" :game="game"/>
+    <div class="container">
+      <div class="row">
+        <game-review-container v-for="game in filteredList" v-bind:key="game.title" :game="game"/>
+      </div>
+    </div>
   </div>
 </template>
 
