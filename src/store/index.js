@@ -7,13 +7,13 @@ export default new Vuex.Store({
   state: {
     query: '',
     games: [
-      { id: 1, title: 'Uncharted', overallRating: 8.0 },
-      { id: 2, title: 'Halo 3', overallRating: 8.5 },
-      { id: 3, title: 'Journey', overallRating: 9.0},
-      { id: 4, title: 'Uncharted 2', overallRating: 9.0},
-      { id: 5, title: 'Psychonauts', overallRating: 7.5},
-      { id: 6, title: 'NFL Street', overallRating: 9.0},
-      { id: 7, title: 'Braid', overallRating: 9.0}
+      { id: 1, title: 'Uncharted', alias: "uncharted", overallRating: 4 },
+      { id: 2, title: 'Halo 3', alias: "halo_3", overallRating: 4 },
+      { id: 3, title: 'Journey', alias: "journey", overallRating: 5},
+      { id: 4, title: 'Uncharted 2', alias: "uncharted_2", overallRating: 5},
+      { id: 5, title: 'Psychonauts', alias: "psychonauts", overallRating: 4},
+      { id: 6, title: 'NFL Street', alias: "nfl_street", overallRating: 4},
+      { id: 7, title: 'Braid', alias: "braid", overallRating: 5}
     ]
   },
   mutations: {
