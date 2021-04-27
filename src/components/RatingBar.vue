@@ -1,9 +1,7 @@
 <template>
-      <div class="container">
-            <img alt="Vue logo" width="80%" height="25px" src="../assets/star_bar.png">
-
-                
-        </div>
+  <div class="container">
+    <img alt="Vue logo" width="80%" height="25px" :src="getImgUrl()">            
+  </div>
 </template>
 
 <script>
@@ -11,11 +9,11 @@
 export default {
   name: 'RatingBar',
   props: {
-    msg: String
+    stars: Number
   }, 
-  data () {
-    return {
-      search: ''
+  methods: {
+    getImgUrl() {
+      return require(`../assets/stars_${this.stars}.png`)
     }
   }
 }

@@ -25,9 +25,9 @@ export default {
       query: state => state.query
     }),
     filteredList() {
-       return this.games.filter(game => {
-         return game.title.toLowerCase().includes(this.query.toLowerCase())
-       })
+      return this.games.filter(game => {
+        return game.title.toLowerCase().includes(this.query.toLowerCase())
+      })
     }
   }
 }
