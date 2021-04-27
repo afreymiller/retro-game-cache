@@ -1,9 +1,8 @@
 <template>
       <div class="col-md-2 game-review-container">
-        <img alt="Vue logo" height="100px" src="../assets/halo_3.png">
-                        <div>{{game.title}}</div>
-
-        <rating-bar/>
+        <img alt="" height="100px" :src="getImgUrl()">
+        <div>{{game.title}}</div>
+        <rating-bar :stars="game.overallRating"/>
       </div>
 </template>
 
@@ -16,8 +15,12 @@ export default {
   name: 'GameReviewContainer',
   props: {
     game: Object
-  }, 
-  computed: {}
+  },
+  methods: {
+    getImgUrl() {
+      return require(`../assets/${this.game.alias}.png`)
+    }
+  }
 }
 </script>
 
