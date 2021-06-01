@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <input type="text" style="width: 20em;" v-model="search" @change="filterBySearch()"
+    <input type="text" style="width: 20rem;" v-model="search" @change="filterBySearch()"
     placeholder="Search over 80 video games..."/>
   </div>
 </template>
