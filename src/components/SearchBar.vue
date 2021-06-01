@@ -6,11 +6,11 @@
     </p>
     <p>
       <label for="b">Search by game genre</label>
-      <select name="cars" id="b">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
+      <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
+        <option value="adventure">Adventure</option>
+        <option value="fps">First-person Shooter</option>
+        <option value="puzzle">Puzzle</option>
+        <option value="sports">Sports</option>
       </select>
     </p>
   </form>
@@ -27,7 +27,8 @@ export default {
   }, 
   data () {
     return {
-      search: ''
+      search: '',
+      selected: ""
     }
   },
   watch: {
@@ -37,10 +38,14 @@ export default {
   },
   methods: {
     ...mapActions([ // spread operator so that other methods can still be added.
-      'updateQuery'
+      'updateQuery',
+      'updateGenre'
     ]),
     filterBySearch: function() {
       this.updateQuery(this.search)
+    },
+    changeGenre: function() {
+      this.updateGenre(this.selected);
     }
   }
 }
@@ -65,7 +70,7 @@ a {
 
 form  { display: table;      }
 p     { display: table-row;  }
-label { display: table-cell; text-align: right;}
+label { display: table-cell; text-align: left;}
 input { display: table-cell; width: 20rem; }
 select { display: table-cell; text-align: left; width: 20rem; }
 
