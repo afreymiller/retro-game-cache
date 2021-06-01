@@ -7,10 +7,9 @@
     <p>
       <label for="b">Search by game genre</label>
       <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
-        <option value="adventure">Adventure</option>
-        <option value="fps">First-person Shooter</option>
-        <option value="puzzle">Puzzle</option>
-        <option value="sports">Sports</option>
+        <option v-for="option in options" v-bind:key="option.value" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
       </select>
     </p>
   </form>
@@ -28,7 +27,13 @@ export default {
   data () {
     return {
       search: '',
-      selected: ""
+      selected: "fps",
+      options: [
+        {value: "adventure", text: "Adventure"},
+        {value: "fps", text: "First-person shooter"},
+        {value: "puzzle", text: "Puzzle"},
+        {value: "sports", text: "Sports"}
+      ]
     }
   },
   watch: {
