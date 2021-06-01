@@ -1,6 +1,6 @@
 <template>
       <div class="col-md-2 game-review-container">
-        <img alt="" height="100px" :src="getImgUrl()">
+        <img alt="" height="70rem" width="50rem" :src="getImgUrl()">
         <div>{{game.title}}</div>
         <rating-bar :stars="game.overallRating"/>
       </div>

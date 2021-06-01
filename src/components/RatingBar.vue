@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img alt="Vue logo" width="80%" height="25px" :src="getImgUrl()">            
+    <img alt="Vue logo" width="80rem" height="30rem;" :src="getImgUrl()">            
   </div>
 </template>
 
