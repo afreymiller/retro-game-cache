@@ -1,8 +1,19 @@
 <template>
-  <div class="container">
-    <input type="text" style="width: 20rem;" v-model="search" @change="filterBySearch()"
-    placeholder="Search over 80 video games..."/>
-  </div>
+  <form class="dummy">
+    <p>
+      <label for="a">Search by game title </label>
+      <input id="a" type="text" v-model="search" @change="filterBySearch()">
+    </p>
+    <p>
+      <label for="b">Search by game genre</label>
+      <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
+        <option value="adventure">Adventure</option>
+        <option value="fps">First-person Shooter</option>
+        <option value="puzzle">Puzzle</option>
+        <option value="sports">Sports</option>
+      </select>
+    </p>
+  </form>
 </template>
 
 <script>
@@ -16,7 +27,8 @@ export default {
   }, 
   data () {
     return {
-      search: ''
+      search: '',
+      selected: ""
     }
   },
   watch: {
@@ -26,10 +38,14 @@ export default {
   },
   methods: {
     ...mapActions([ // spread operator so that other methods can still be added.
-      'updateQuery'
+      'updateQuery',
+      'updateGenre'
     ]),
     filterBySearch: function() {
       this.updateQuery(this.search)
+    },
+    changeGenre: function() {
+      this.updateGenre(this.selected);
     }
   }
 }
@@ -50,5 +66,15 @@ li {
 }
 a {
   color: #42b983;
+}
+
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; text-align: left;}
+input { display: table-cell; width: 20rem; }
+select { display: table-cell; text-align: left; width: 20rem; }
+
+.dummy {
+  margin: 0 auto;
 }
 </style>
