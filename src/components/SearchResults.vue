@@ -22,11 +22,12 @@ export default {
   computed: {
     ...mapState({
       games: state => state.games,
-      query: state => state.query
+      query: state => state.query,
+      genre: state => state.genre
     }),
     filteredList() {
       return this.games.filter(game => {
-        return game.title.toLowerCase().includes(this.query.toLowerCase())
+        return game.title.toLowerCase().includes(this.query.toLowerCase()) && game.genre.toLowerCase() == this.genre
       })
     }
   }
