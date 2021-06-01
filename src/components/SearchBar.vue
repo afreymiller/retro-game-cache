@@ -1,8 +1,19 @@
 <template>
-  <div class="container">
-    <input type="text" style="width: 20rem;" v-model="search" @change="filterBySearch()"
-    placeholder="Search over 80 video games..."/>
-  </div>
+  <form class="dummy">
+    <p>
+      <label for="a">Search by game title </label>
+      <input id="a" type="text" v-model="search" @change="filterBySearch()">
+    </p>
+    <p>
+      <label for="b">Search by game genre</label>
+      <select name="cars" id="b">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </p>
+  </form>
 </template>
 
 <script>
@@ -50,5 +61,15 @@ li {
 }
 a {
   color: #42b983;
+}
+
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; text-align: right;}
+input { display: table-cell; width: 20rem; }
+select { display: table-cell; text-align: left; width: 20rem; }
+
+.dummy {
+  margin: 0 auto;
 }
 </style>
