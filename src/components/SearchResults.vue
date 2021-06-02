@@ -27,7 +27,8 @@ export default {
     }),
     filteredList() {
       return this.games.filter(game => {
-        return game.title.toLowerCase().includes(this.query.toLowerCase()) && game.genre.toLowerCase() == this.genre
+        return game.title.toLowerCase().includes(this.query.toLowerCase()) 
+          && game.genre.toLowerCase() == this.genre
       })
     }
   }
