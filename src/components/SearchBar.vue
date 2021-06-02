@@ -1,55 +1,17 @@
 <template>
   <form class="dummy">
     <title-search-bar/>
-    <p>
-      <label for="b">Search by game genre</label>
-      <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
-        <option v-for="option in options" v-bind:key="option.value" v-bind:value="option.value">
-          {{ option.text }}
-        </option>
-      </select>
-    </p>
+    <genre-search-bar/>
   </form>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import GenreSearchBar from './GenreSearchBar.vue'
 import TitleSearchBar from './TitleSearchBar.vue'
 
 export default {
   name: 'SearchBar',
-  components: { TitleSearchBar },
-  props: {
-    msg: String
-  }, 
-  data () {
-    return {
-      selected: "fps",
-      options: [
-        {value: "adventure", text: "Adventure"},
-        {value: "fps", text: "First-person shooter"},
-        {value: "puzzle", text: "Puzzle"},
-        {value: "sports", text: "Sports"}
-      ]
-    }
-  },
-  watch: {
-    search: function() {
-      this.filterBySearch();
-    }
-  },
-  methods: {
-    ...mapActions([ // spread operator so that other methods can still be added.
-      'updateQuery',
-      'updateGenre'
-    ]),
-    filterBySearch: function() {
-      this.updateQuery(this.search)
-    },
-    changeGenre: function() {
-      this.updateGenre(this.selected);
-    }
-  }
+  components: { TitleSearchBar, GenreSearchBar }
 }
 </script>
 
