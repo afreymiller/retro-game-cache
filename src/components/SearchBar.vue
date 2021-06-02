@@ -1,9 +1,6 @@
 <template>
   <form class="dummy">
-    <p>
-      <label for="a">Search by game title </label>
-      <input id="a" type="text" v-model="search" @change="filterBySearch()">
-    </p>
+    <title-search-bar/>
     <p>
       <label for="b">Search by game genre</label>
       <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
@@ -17,16 +14,16 @@
 
 <script>
 import { mapActions } from 'vuex'
-
+import TitleSearchBar from './TitleSearchBar.vue'
 
 export default {
   name: 'SearchBar',
+  components: { TitleSearchBar },
   props: {
     msg: String
   }, 
   data () {
     return {
-      search: '',
       selected: "fps",
       options: [
         {value: "adventure", text: "Adventure"},
