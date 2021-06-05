@@ -8,6 +8,7 @@
 <script>
 import GenreSearchBar from './GenreSearchBar.vue'
 import TitleSearchBar from './TitleSearchBar.vue'
+//import constants from '../utils/constants.js'
 
 export default {
   name: 'SearchBar',
