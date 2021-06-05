@@ -1,7 +1,7 @@
 <template>
   <p>
-    <label for="a">{{label}} </label>
-    <input id="a" type="text" v-model="search" @change="filterBySearch()">
+    <label for="title-search">{{label}} </label>
+    <input id="title-search" type="text" v-model="search" @change="filterBySearch()">
   </p>
 </template>
 
