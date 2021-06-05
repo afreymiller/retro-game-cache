@@ -1,9 +1,9 @@
 <template>
     <p>
-      <label for="b">{{label}}</label>
-      <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
+      <label for="genre-search">{{label}}</label>
+      <select  v-model="selected" name="genres" id="genre-search" @change="changeGenre()">
         <option v-for="option in options" v-bind:key="option.value" v-bind:value="option.value">
-          {{ option.text }}
+          {{ option.title }}
         </option>
       </select>
     </p>
@@ -24,10 +24,10 @@ export default {
       selected: "fps",
       label: Constants.GENRE_LABEL,
       options: [
-        {value: "adventure", text: "Adventure"},
-        {value: "fps", text: "First-person shooter"},
-        {value: "puzzle", text: "Puzzle"},
-        {value: "sports", text: "Sports"}
+        {value: "adventure", title: "Adventure"},
+        {value: "fps", title: "First-person shooter"},
+        {value: "puzzle", title: "Puzzle"},
+        {value: "sports", title: "Sports"}
       ]
     }
   },
