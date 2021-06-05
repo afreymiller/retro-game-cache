@@ -1,6 +1,6 @@
 <template>
     <p>
-      <label for="b">Search by game genre</label>
+      <label for="b">{{label}}</label>
       <select  v-model="selected" name="genres" id="b" @change="changeGenre()">
         <option v-for="option in options" v-bind:key="option.value" v-bind:value="option.value">
           {{ option.text }}
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import Constants from '../utils/constants.js'
 import { mapActions } from 'vuex'
 
 
@@ -21,6 +22,7 @@ export default {
   data () {
     return {
       selected: "fps",
+      label: Constants.GENRE_LABEL,
       options: [
         {value: "adventure", text: "Adventure"},
         {value: "fps", text: "First-person shooter"},
