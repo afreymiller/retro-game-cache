@@ -32,7 +32,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([ // spread operator so that other methods can still be added.
+    ...mapActions([ 
       'updateGenre'
     ]),
     changeGenre: function() {
