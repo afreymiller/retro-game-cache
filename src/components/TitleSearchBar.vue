@@ -1,12 +1,13 @@
 <template>
   <p>
-    <label for="a">Search by game title </label>
+    <label for="a">{{label}} </label>
     <input id="a" type="text" v-model="search" @change="filterBySearch()">
   </p>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import Constants from '../utils/constants.js'
 
 
 export default {
@@ -16,7 +17,8 @@ export default {
   }, 
   data () {
     return {
-      search: ''
+      search: '',
+      label: Constants.TITLE_LABEL
     }
   },
   watch: {
