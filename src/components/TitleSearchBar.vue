@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([ // spread operator so that other methods can still be added.
+    ...mapActions([
       'updateQuery'
     ]),
     filterBySearch: function() {
