@@ -21,15 +21,19 @@ export default {
   }, 
   data () {
     return {
-      selected: "fps",
+      selected: "any",
       label: Constants.GENRE_LABEL,
       options: [
         {value: "adventure", title: "Adventure"},
         {value: "fps", title: "First-person shooter"},
         {value: "puzzle", title: "Puzzle"},
-        {value: "sports", title: "Sports"}
+        {value: "sports", title: "Sports"},
+        {value: "any", title: "Any genre"}
       ]
     }
+  },
+  created: function () {
+    this.changeGenre();
   },
   methods: {
     ...mapActions([ 

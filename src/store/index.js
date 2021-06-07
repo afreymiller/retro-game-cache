@@ -8,16 +8,17 @@ export default new Vuex.Store({
     query: '',
     genre: '',
     games: [
-      { id: 1, title: 'Uncharted', alias: "uncharted", genre: 'adventure', overallRating: "3.0" },
-      { id: 2, title: 'Halo 3', alias: "halo_3", genre: 'fps', overallRating: "3.5" },
-      { id: 3, title: 'Journey', alias: "journey", genre: 'adventure', overallRating: "3.5"},
-      { id: 4, title: 'Uncharted 2', alias: "uncharted_2", genre: 'adventure', overallRating: "4.0"},
-      { id: 5, title: 'Psychonauts', alias: "psychonauts", genre: 'adventure', overallRating: "5.0"},
-      { id: 6, title: 'NFL Street', alias: "nfl_street", genre: 'sports', overallRating: "3.5"},
-      { id: 7, title: 'Braid', alias: "braid", genre: 'puzzle', overallRating: "3.5"}
+      { id: 1, title: 'Uncharted', alias: "uncharted", genres: ['adventure', 'any'], overallRating: "3.0" },
+      { id: 2, title: 'Halo 3', alias: "halo_3", genres: ['fps', 'any'], overallRating: "3.5" },
+      { id: 3, title: 'Journey', alias: "journey", genres: ['any', 'adventure'], overallRating: "3.5"},
+      { id: 4, title: 'Uncharted 2', alias: "uncharted_2", genres: ['any', 'adventure'], overallRating: "4.0"},
+      { id: 5, title: 'Psychonauts', alias: "psychonauts", genres: ['any', 'adventure'], overallRating: "5.0"},
+      { id: 6, title: 'NFL Street', alias: "nfl_street", genres: ['any', 'sports'], overallRating: "3.5"},
+      { id: 7, title: 'Braid', alias: "braid", genres: ['any', 'puzzle'], overallRating: "3.5"}
     ],
     options: [
-      {value: "adventure", text: "Adventure", selected: true},
+      {value: "any", text: "All genres", selected: true},
+      {value: "adventure", text: "Adventure", selected: false},
       {value: "fps", text: "First-person shooter", selected: false},
       {value: "puzzle", text: "Puzzle", selected: false},
       {value: "sports", text: "Sports", selected: false}
