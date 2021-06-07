@@ -15,13 +15,6 @@ export default new Vuex.Store({
       { id: 5, title: 'Psychonauts', alias: "psychonauts", genres: ['any', 'adventure'], overallRating: "5.0"},
       { id: 6, title: 'NFL Street', alias: "nfl_street", genres: ['any', 'sports'], overallRating: "3.5"},
       { id: 7, title: 'Braid', alias: "braid", genres: ['any', 'puzzle'], overallRating: "3.5"}
-    ],
-    options: [
-      {value: "any", text: "All genres", selected: true},
-      {value: "adventure", text: "Adventure", selected: false},
-      {value: "fps", text: "First-person shooter", selected: false},
-      {value: "puzzle", text: "Puzzle", selected: false},
-      {value: "sports", text: "Sports", selected: false}
     ]
   },
   mutations: {
