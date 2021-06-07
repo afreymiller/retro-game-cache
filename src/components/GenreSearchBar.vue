@@ -55,7 +55,4 @@ label { display: table-cell; text-align: left;}
 input { display: table-cell; width: 20rem; }
 select { display: table-cell; text-align: left; width: 20rem; }
 
-.dummy {
-  margin: 0 auto;
-}
 </style>
