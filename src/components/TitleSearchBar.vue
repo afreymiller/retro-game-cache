@@ -39,7 +39,6 @@ export default {
 
 <style scoped>
 
-form  { display: table;      }
 p     { display: table-row;  }
 label { display: table-cell; text-align: left;}
 input { display: table-cell; width: 20rem; }
