@@ -19,10 +19,6 @@ export default {
 <style scoped>
 
 form  { display: table;      }
-p     { display: table-row;  }
-label { display: table-cell; text-align: left;}
-input { display: table-cell; width: 20rem; }
-select { display: table-cell; text-align: left; width: 20rem; }
 
 .dummy {
   margin: 0 auto;

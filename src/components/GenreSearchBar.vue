@@ -49,7 +49,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-form  { display: table;      }
 p     { display: table-row;  }
 label { display: table-cell; text-align: left;}
 input { display: table-cell; width: 20rem; }
