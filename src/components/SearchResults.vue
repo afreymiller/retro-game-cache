@@ -28,7 +28,7 @@ export default {
     filteredList() {
       return this.games.filter(game => {
         return game.title.toLowerCase().includes(this.query.toLowerCase()) 
-          && game.genre.toLowerCase() == this.genre
+          && game.genres.includes(this.genre.toLowerCase())
       })
     }
   }
